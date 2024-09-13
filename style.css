@@ -16,6 +16,7 @@ body {
   overflow: hidden;
   width: 650px;
   height: 480px;
+  margin-top: 10%;
 }
 
 h1 {
@@ -52,6 +53,7 @@ h1 {
 .hours {
   background: #F6F4F3;
   color: #183059;
+  
 }
 
 .minutes {

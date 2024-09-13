@@ -1,14 +1,22 @@
-const startDate = new Date(2024, 8, 13, 10, 0, 0).getTime(); // September 13, 2024, 10:00 AM
-const endDate = new Date(2024, 8, 14, 10, 0, 0).getTime();   // September 14, 2024, 10:00 AM
 let timer;
+let endDate;
+
+// Initialize the timer to show 00:00:00 before starting
+document.getElementById("timer").innerHTML =
+  "<div class=\"hours\"> \
+  <div class=\"numbers\">24</div>hours</div> \
+<div class=\"minutes\"> \
+  <div class=\"numbers\">00</div>minutes</div> \
+<div class=\"seconds\"> \
+  <div class=\"numbers\">00</div>seconds</div> \
+</div>";
 
 document.getElementById("startBtn").addEventListener("click", function() {
   // Make the button invisible
   this.style.display = "none";
 
-  // Show the timer and position it at the center of the screen
-  const timerElement = document.getElementById("timer");
-  timerElement.style.display = "block";
+  // Calculate the end date as 24 hours from now
+  endDate = new Date().getTime() + 24 * 60 * 60 * 1000;
 
   // Start the countdown
   timer = setInterval(function() {
@@ -32,7 +40,7 @@ document.getElementById("startBtn").addEventListener("click", function() {
 
     // Display the countdown
     document.getElementById("timer").innerHTML =
-      " <div class=\"hours\"> \
+      "<div class=\"hours\"> \
       <div class=\"numbers\">" + hours + "</div>hours</div> \
     <div class=\"minutes\"> \
       <div class=\"numbers\">" + minutes + "</div>minutes</div> \
